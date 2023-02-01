@@ -1,7 +1,7 @@
 const server = require('http').createServer(); // STEP 1 ::=> HTTP Server object
 const io = require('socket.io')(server); // STEP 2 ::=> Bind socket.io to http server so after http connection the bidirectional communication keep up using web sockets.
 const PORT = 4444; // PORT of server
-const HOST = "127.0.0.1"; // Hosting Server change when you make it live on server according to your hosting server
+//const HOST = "127.0.0.1"; // Hosting Server change when you make it live on server according to your hosting server
 var players = {}; // It will keep all the players data who have register using mobile number. you can use actual persistence database I have used this for temporery basis
 var sockets = {}; // stores all the connected clients
 var games = {}; // stores the ongoing game
@@ -231,8 +231,8 @@ io.on('connection', client => {
 });
 
 
-server.listen(PORT, HOST); // 3 ::=> Staring HTTP server which will be consumed by clients
-console.log("listening to : " + HOST + ":" + PORT);
+server.listen(PORT); // 3 ::=> Staring HTTP server which will be consumed by clients
+console.log("listening to : " +  PORT);
 
 
 // Generate Game ID
